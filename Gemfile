@@ -41,6 +41,12 @@ gem 'rubocop', require: false
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Use devise for authentication
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
+
+gem 'haml-rails', '~> 1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

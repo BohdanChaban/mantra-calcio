@@ -15,3 +15,17 @@ Metrics/LineLength:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Exclude:
+  - 'app/views/**/*'
+  - 'bin/*'
+  - 'db/schema.rb'
+  - 'db/migrate/*'
+  - 'log/**/*'
+  - 'node_modules/**/*'
+  - 'public/**/*'
+  - 'scripts/**/*'
+  - 'vendor/**/*'
+  - 'tmp/**/*'
+  - '.git/**/*'
+  - 'config/initializers/devise.rb'

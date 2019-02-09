@@ -9,3 +9,6 @@
 #
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
+Seeder.new(objects_name: 'clubs').save
+Seeder.new(objects_name: 'positions').save
+Seeder.new(team_name: 'raky').create_team

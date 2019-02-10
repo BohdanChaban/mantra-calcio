@@ -9,9 +9,10 @@
 #
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
-Seeder.new(objects_name: 'clubs').save
-Seeder.new(objects_name: 'positions').save
-Seeder.new(objects_name: 'teams').save
-Seeder.new(team_name: 'raky').create_team
-Seeder.new(team_name: 'sx').create_team
-Seeder.new(team_name: 'pratima').create_team
+['clubs', 'positions', 'teams'].each do |objects|
+  Seeder.new(objects_name: objects).save
+end
+
+Seeder.new(objects_name: 'teams').teams.each do |team_name|
+  Seeder.new(team_name: team_name).create_team
+end

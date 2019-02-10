@@ -15,6 +15,10 @@ class Seeder
     Rails.root.join('config', 'teams', "#{team_name}.yml")
   end
 
+  def teams
+    YAML::load_file(Rails.root.join('config', 'mantra', 'teams.yml'))['teams']
+  end
+
   def create_team
     YAML::load_file(team_path)['players'].each do |player_name, v|
         club = Club.find_by_name(v[1]['club'])

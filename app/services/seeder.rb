@@ -26,7 +26,7 @@ class Seeder
         player.positions << Position.where(name: v[0]['position'])
         player.save
       end
-
+    puts "Team seeded: #{team.name} "
     team.players
   end
 

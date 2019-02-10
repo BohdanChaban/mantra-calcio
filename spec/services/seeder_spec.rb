@@ -8,7 +8,7 @@ RSpec.describe Seeder do
     end
 
     it 'creates team' do
-      expect(subject.size).to eq 24
+      expect(subject.size).to eq 25
     end
 
     it 'team is raky' do

@@ -2,8 +2,8 @@ class Seeder
   attr_reader :objects_name, :team, :team_name
 
   def initialize(objects_name: 'clubs', team_name: 'lol')
-    @team_name = team_name || 'raky'
-    @team = Team.first_or_initialize(name: team_name)
+    @team_name = team_name
+    @team = Team.create(name: team_name)
     @objects_name = objects_name
   end
 

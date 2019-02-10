@@ -11,6 +11,10 @@ players:
     - position:
       - Dc
     - club: MIL
+  Danilo:
+    - position:
+      - Dc
+    - club: BOL
   Rui:
     - position:
       - Ds

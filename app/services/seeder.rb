@@ -21,11 +21,12 @@ class Seeder
 
   def create_team
     YAML::load_file(team_path)['players'].each do |player_name, v|
-        club = Club.find_by_name(v[1]['club'])
-        player = Player.new(name: player_name, team: team, club_id: club.id )
-        player.positions << Position.where(name: v[0]['position'])
-        player.save
-      end
+      puts player_name
+      club = Club.find_by_name(v[1]['club'])
+      player = Player.new(name: player_name, team: team, club_id: club.id )
+      player.positions << Position.where(name: v[0]['position'])
+      player.save
+    end
     puts "Team seeded: #{team.name} "
     team.players
   end

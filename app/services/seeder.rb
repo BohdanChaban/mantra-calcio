@@ -3,7 +3,7 @@ class Seeder
 
   def initialize(objects_name: 'clubs', team_name: 'lol')
     @team_name = team_name
-    @team = Team.create(name: team_name)
+    @team = Team.find_by_name(team_name)
     @objects_name = objects_name
   end
 

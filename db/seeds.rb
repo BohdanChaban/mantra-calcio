@@ -11,5 +11,7 @@
 # Character.create(name: 'Luke', movie: movies.first)
 Seeder.new(objects_name: 'clubs').save
 Seeder.new(objects_name: 'positions').save
+Seeder.new(objects_name: 'teams').save
 Seeder.new(team_name: 'raky').create_team
 Seeder.new(team_name: 'sx').create_team
+Seeder.new(team_name: 'pratima').create_team

@@ -1,2 +1,27 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.erb
+.home
+  #carouselExampleIndicators.carousel.slide{:data => {:ride => "carousel"}}
+    %ol.carousel-indicators
+      %li.active{:data => {:target => "#carouselExampleIndicators", :slide => {:to => "0"}}}
+      %li{:data => {:target => "#carouselExampleIndicators", :slide => {:to => "1"}}}
+      %li{:data => {:target => "#carouselExampleIndicators", :slide => {:to => "2"}}}
+    .carousel-inner
+      .carousel-item.active
+        %img.d-block.w-100{:src => "/images/serie-a-logo2.png", :alt => "serie A logo", :data => {:interval => "100"}}
+      .carousel-item
+        %img.d-block.w-100{:src => "/images/players.png", :alt => "players"}
+      .carousel-item
+        %img.d-block.w-100{:src => "/images/logo1.png", :alt => "serie A logo"}
+    %a.carousel-control-prev{:href => "#carouselExampleIndicators",:role => "button",:data => {:slide => "prev"}}
+      %span.carousel-control-prev-icon{:aria => {:hidden => "true"}}
+      %span.sr-only Previous
+    %a.carousel-control-next{:href => "#carouselExampleIndicators",:role => "button",:data => {:slide => "next"}}
+      %span.carousel-control-next-icon{:aria => {:hidden => "true"}}
+      %span.sr-only Next
+
+  .home-container
+    %h1 Mantra Fantasy Football
+    %p Create your own team and win Serie A
+
+    .home-btn-container.center
+      %a.btn.btn-primary{:role => "button", :href => new_user_registration_path} Sign Up
+      %a.btn.btn-secondary{:role => "button", :href => new_user_session_path} Sign In

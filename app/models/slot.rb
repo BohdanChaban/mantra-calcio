@@ -1,5 +1,5 @@
 class Slot < ApplicationRecord
-  def mantra_position
-    Position.where(name: TeamModule.last.slots.last.position.split('/'))
+  def mantra_positions
+    Position.where(name: position.split('/'))
   end
 end

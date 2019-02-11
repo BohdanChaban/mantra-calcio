@@ -1,0 +1,21 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-item {
+  vertical-align: middle;
+  max-height: 700px;
+}
+
+.home {
+  background: #0a3464;
+  height: 100vh;
+}
+.home-container {
+  text-align: center;
+  color: #DADADA;
+}

@@ -3,7 +3,7 @@ class Seeder
 
   def initialize(objects_name: 'clubs', team_name: 'lol')
     @team_name = team_name
-    @team = Team.find_by_name(team_name)
+    @team = Team.find_by(name: team_name)
     @objects_name = objects_name
   end
 
@@ -16,25 +16,29 @@ class Seeder
   end
 
   def teams
-    YAML::load_file(Rails.root.join('config', 'mantra', 'teams.yml'))['teams']
+    YAML.load_file(Rails.root.join('config', 'mantra', 'teams.yml'))['teams']
   end
 
   def create_team
-    YAML::load_file(team_path)['players'].each do |player_name, v|
-      puts player_name
-      club = Club.find_by_name(v[1]['club'])
-      player = Player.new(name: player_name, team: team, club_id: club.id )
-      player.positions << Position.where(name: v[0]['position'])
-      player.save
+    YAML.load_file(team_path)['players'].each do |player_name, v|
+      create_player(player_name, v)
     end
     puts "Team seeded: #{team.name} "
     team.players
   end
 
-  def load
-    raise 'File does not exist' unless File.exists?(path)
+  def create_player(name, player_info)
+    puts name
+    club = Club.find_by(name: player_info[1]['club'])
+    player = Player.new(name: name, team: team, club_id: club.id)
+    player.positions = Position.where(name: player_info[0]['position'])
+    player.save
+  end
 
-    YAML::load_file(path)
+  def load
+    raise 'File does not exist' unless File.exist?(path)
+
+    YAML.load_file(path)
   end
 
   def save

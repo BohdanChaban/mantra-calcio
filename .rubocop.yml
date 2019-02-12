@@ -32,3 +32,6 @@ Style/ClassAndModuleChildren:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Rails/Output:
+  Enabled: false

@@ -12,11 +12,11 @@ RSpec.describe Seeder do
     end
 
     it 'team is raky' do
-      expect( subject.map { |t| t.team.name }.uniq ).to eq ['Raky']
+      expect(subject.map { |t| t.team.name }.uniq).to eq ['Raky']
     end
 
     it 'has 4 Dd s' do
-      expect(subject.joins(:positions).where(positions: {name: 'Dd'}).count).to eq 4
+      expect(subject.joins(:positions).where(positions: { name: 'Dd' }).count).to eq 4
     end
   end
 end

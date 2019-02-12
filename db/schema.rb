@@ -12,11 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2019_02_10_185259) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "clubs", force: :cascade do |t|
     t.string "name"
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "player_positionings", id: false, force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "position_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -25,11 +33,6 @@ ActiveRecord::Schema.define(version: 2019_02_10_185259) do
     t.integer "club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "players_positions", id: false, force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "position_id"
   end
 
   create_table "positions", force: :cascade do |t|
